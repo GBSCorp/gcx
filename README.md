@@ -31,7 +31,9 @@ make # or make -j number_of_threads, e.g., make -j 2
 # Move daemon and wallet to /usr/bin
 
 cd gcy/build/release/src
+
 sudo cp globalcurrencyd /usr/bin
+
 sudo cp simplewallet /usr/bin
 
 # Start Daemon
