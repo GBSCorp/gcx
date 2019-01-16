@@ -3,6 +3,42 @@
 
 ### On Ubuntu 14.04
 
+Preparation
+
+Before proceeding to the compilation, the following packages are required:
+
+# refresh ubuntu's repository
+sudo apt-get update
+
+#install git
+sudo apt-get install git
+
+# install dependencies
+sudo apt-get install build-essential cmake libboost1.55-all-dev miniupnpc libunbound-dev graphviz doxygen libdb5.1++-dev
+Compilation
+
+We can now download the current GlobalCurrency and compile it as follows:
+
+# download the latest GlobalCurrency source code from github
+git clone https://github.com/globalcurrency/gcy.git
+
+# go into globalcurrency folder
+cd gcy/
+
+# compile, for compile to finsih succesfully please use a machine with 4GB or more.
+make # or make -j number_of_threads, e.g., make -j 2
+
+# Move daemon and wallet to /usr/bin
+
+cd gcy/build/release/src
+sudo cp globalcurrencyd /usr/bin
+sudo cp simplewallet /usr/bin
+
+# Start Daemon
+globalcurrencyd
+
+# Start Wallet
+simplewallet
 
 
 ### On *nix
